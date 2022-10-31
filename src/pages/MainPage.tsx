@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {Button} from 'antd';
+import {Button, Typography} from 'antd';
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
@@ -17,6 +17,7 @@ export const MainPage = () => {
 
   return (
     <>
+      <Typography.Title>Тут будет разъёбное приложение</Typography.Title>
       <Button onClick={onClose}>Close</Button>
     </>
   );
