@@ -17,8 +17,10 @@ export const MainPage = () => {
 
   return (
     <>
-      <Typography.Title>Тут будет разъёбное приложение</Typography.Title>
       <Button onClick={onClose}>Close</Button>
+      <Typography.Text>
+        {tg.initDataUnsafe?.user?.username}
+      </Typography.Text>
     </>
   );
 };
