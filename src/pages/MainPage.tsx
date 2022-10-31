@@ -1,26 +1,14 @@
-import React, {useEffect} from 'react';
-import {Button, Typography} from 'antd';
-
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-const tg = window.Telegram.WebApp;
+import React from 'react';
+import { Button, Typography } from 'antd';
+import { useTelegram } from '../hooks/useTelegram';
 
 export const MainPage = () => {
-
-  useEffect(() => {
-    tg.ready();
-  }, [])
-
-  const onClose = () => {
-    tg.close()
-  }
+  const { onClose, user } = useTelegram();
 
   return (
     <>
       <Button onClick={onClose}>Close</Button>
-      <Typography.Text>
-        {tg.initDataUnsafe?.user?.username}
-      </Typography.Text>
+      <Typography.Text>{user?.username}</Typography.Text>
     </>
   );
 };
